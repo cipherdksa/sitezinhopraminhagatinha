@@ -1,0 +1,95 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+header>h1{
+    padding-top: 50px;
+    font-variant: small-caps;
+    font-family: 'Passion One', cursive;
+    font-size: 10vh;
+}
+
+header>p{
+    padding-bottom: 50px;
+}
+section>p{
+    padding-bottom: 2em;
+}
+
+#img01{
+   background-image: url("gifs/studio\ ghibli\ hug\ GIF.gif");
+   background-position: right center;
+   background-size: cover;
+}
+
+#img02{
+   background-image: url("gifs/i\ love\ you\ smile\ GIF.gif");
+   background-size: cover;
+}
+
+#img03{
+    background-image: url("gifs/my\ neighbor\ totoro\ GIF.gif");
+    background-size: cover;
+ }
+
+ #img04{
+    background-image: url("gifs/studio\ ghibli\ GIF.gif");
+    background-size: cover;
+ }
+
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+a:hover{
+    text-decoration: underline gray;
+}
+
+section{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;
+    padding-left: 40px;
+    font-family: 'Sriracha', cursive;
+    font-size: 3.5vw;
+}
+
+.normal{
+    background-color: white;
+    color: black;
+}
+.imagem{
+    background-color: rgba(0, 0, 0, 0.455);
+    color: white;
+    text-shadow: 10px 1px 0px black;
+    box-shadow: inset 6px 6px 13px rgba(0, 0, 0, 0.674);
+    background-attachment: fixed;
+}
+
+.imagem>p{
+    display: inline-block;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.428);
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

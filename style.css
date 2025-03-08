@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111; /* Fundo escuro */
+    color: #fff; /* Texto claro */
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro para o container */
+    width: 100%;
+    height: 100vh; /* Ocupa a tela toda */
+}
+
+/* Personagens ocupando 100% da altura da tela */
+.personagens {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Estilo dos GIFs */
+.personagem {
+    width: 120px; /* Ajuste para o tamanho dos GIFs */
+    height: auto;
+    margin: 0 15px;
+    animation: slideIn 3s ease-in-out;
+}
+
+/* Animação de entrada dos GIFs */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Animação do fade do título */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.titulo-com-fundo {
+    position: absolute;
+    font-size: 4rem; /* Tamanho da fonte */
+    font-weight: bold;
+    color: transparent; /* Cor transparente para mostrar o gradiente nas letras */
+    background: linear-gradient(45deg, #8A2BE2, #FF6347, #00BFFF, #FF69B4, #FFD700, #32CD32, #800080); /* Gradiente de cores vibrantes e mais animado */
+    -webkit-background-clip: text; /* Faz o gradiente preencher o texto */
+    background-clip: text;
+    animation: fadeIn 2s ease-in-out;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    letter-spacing: 2px; /* Espaço entre as letras */
+    font-family: 'Comic Sans MS', sans-serif; /* Fonte divertida */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.651); /* Sombra para dar um destaque maior */
+}
+
+.titulo-com-fundo:before {
+    content: ''; /* Criação da pseudo-elemento para a faixa */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62, 66, 66, 0.507); /* Cor da faixa (preto translúcido) */
+    z-index: -1; /* Faz a faixa ficar atrás do título */
+    border-radius: 10px; /* Borda arredondada */
+}
+
+/* Texto e Foto que aparece quando rolar */
+.texto-foto {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 30px;
+    align-items: center;
+}
+
+.texto-foto p {
+    width: 50%;  /* Ajuste para o espaço do texto */
+    text-align: justify;  /* Justifica o texto */
+    margin: 0 20px; /* Espaço entre o texto e as imagens */
+}
+
+.foto-rany {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Para tornar as imagens responsivas em telas pequenas */
+@media screen and (max-width: 768px) {
+    .texto-foto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto-rany {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .texto-foto p {
+        width: 80%;
+    }
+}
+
+
+/* Estilização do título */
+.titulo-texto {
+    position: relative;
+    font-size: 4rem; /* Tamanho da fonte */
+    font-weight: bold;
+    color: transparent; /* Cor transparente para mostrar o gradiente nas letras */
+    background: linear-gradient(45deg, #8A2BE2, #FF6347, #00BFFF, #FF69B4, #FFD700, #32CD32, #800080); /* Gradiente vibrante */
+    -webkit-background-clip: text; /* Faz o gradiente preencher o texto */
+    background-clip: text;
+    animation: fadeIn 2s ease-in-out; /* Animação de fade-in */
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    letter-spacing: 2px; /* Espaço entre as letras */
+    font-family: 'Comic Sans MS', sans-serif; /* Fonte divertida e marcante */
+    text-shadow: 3px 3px 10px rgba(241, 238, 238, 0.932); /* Sombra para dar mais destaque */
+}
+
+/* Efeito de animação do título */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efeito adicional de contorno com brilho */
+.titulo-texto:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #8A2BE2, #FF6347, #00BFFF, #FF69B4, #FFD700, #32CD32, #800080);
+    background-size: 200% 200%;
+    background-position: 100% 100%;
+    animation: glowEffect 4s ease-in-out infinite; /* Efeito de brilho pulsante */
+    z-index: -1;
+    clip-path: inset(5px 5px 5px 5px); /* Criação de contorno */
+}
+
+/* Animação do efeito de brilho pulsante */
+@keyframes glowEffect {
+    0% {
+        background-position: 100% 100%;
+    }
+    50% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.petalas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para não atrapalhar cliques */
+    overflow: hidden;
+}
+
+.petala {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: violet;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: cair linear infinite;
+}
+
+@keyframes cair {
+    from {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.rose-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    animation: sway 3s infinite ease-in-out alternate;
+}
+
+/* Caule da rosa */
+.stem {
+    width: 8px;
+    height: 150px;
+    background-color: green;
+    position: relative;
+    border-radius: 4px;
+}
+
+/* Folhas */
+.leaf {
+    width: 30px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.leaf1 {
+    left: -20px;
+    top: 50px;
+    transform: rotate(-30deg);
+}
+
+.leaf2 {
+    right: -20px;
+    top: 90px;
+    transform: rotate(30deg);
+}
+
+/* Flor */
+.flower {
+    position: absolute;
+    top: -20px;
+}
+
+/* Pétalas */
+.petal {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.petal1 { top: 0; left: 10px; }
+.petal2 { top: -10px; left: -5px; }
+.petal3 { top: -10px; left: 25px; }
+.petal4 { top: -25px; left: 10px; }
+.petal5 { top: -15px; left: 10px; background-color: darkred; }
+
+/* Animação de balanço */
+@keyframes sway {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+
+.musicas-container {
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 50px;
+    background-color: #FFB6C1; /* Fundo rosa claro */
+    border-radius: 10px;
+}
+
+.titulo-musicas {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #FF6347; /* Um tom de rosa vibrante */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.descricao-musicas {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o texto */
+}
+
+.lista-musicas ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.musica-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.audio-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%; /* Ajuste para espaçar o texto e o player */
+}
+
+.nome-musica {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333; /* Cor mais escura para o texto da música */
+    margin-right: 15px; /* Espaço entre o nome da música e o player */
+}
+
+audio {
+    width: 60%; /* Ajuste o tamanho do player de áudio */
+}
+
+.videos-container {
+    text-align: center;
+    background: linear-gradient(to right, #B5E4E7, #A9C7A1, #F6D3D2, #F7C6D6); /* Fundo suave com as cores que você mencionou */
+    padding: 60px 20px; /* Espaçamento para dar mais leveza à área */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar destaque */
+}
+
+.titulo-videos {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.descricao-videos {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lista-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os vídeos */
+    gap: 20px; /* Espaçamento entre os vídeos */
+}
+
+.linha-videos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px; /* Espaçamento entre as linhas */
+}
+
+.video-item {
+    width: 100%; /* Faz com que o vídeo ocupe 100% do espaço disponível */
+    max-width: 360px; /* Limita a largura máxima de cada vídeo */
+    flex: 1 1 30%; /* Faz o vídeo ocupar cerca de 30% do espaço */
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden; /* Garante que o vídeo não vaze para fora da borda */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para destacar cada item */
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 200px; /* Define uma altura padrão para os vídeos */
+}
+
+.video-titulo {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    background-color: #f7f7f7;
+    margin-top: 5px;
+    font-family: 'Arial', sans-serif;
+    border-radius: 5px;
+}
+
+video{
+    height: 200px;
+}
+
+abbr{
+    color: #8A2BE2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
